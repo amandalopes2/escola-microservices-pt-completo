@@ -1,0 +1,15 @@
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" ...>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.escola</groupId>
+  <artifactId>versao-inicial</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <modules>
+    <module>aluno-service</module>
+    <module>curso-service</module>
+    <module>matricula-service</module>
+  </modules>
+  <properties><java.version>17</java.version><spring.boot.version>3.3.2</spring.boot.version></properties>
+  <dependencyManagement>...</dependencyManagement>
+</project>

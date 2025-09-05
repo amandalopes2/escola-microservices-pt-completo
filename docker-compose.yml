@@ -1,0 +1,19 @@
+
+version: "3.8"
+services:
+  api-gateway:
+    image: api-gateway
+    build: ./versao_refatorada/api-gateway
+    ports: ["8080:8080"]
+  aluno-service:
+    image: aluno-service
+    build: ./versao_refatorada/aluno-service
+    ports: ["8081:8081"]
+  curso-service:
+    image: curso-service
+    build: ./versao_refatorada/curso-service
+    ports: ["8082:8082"]
+  matricula-service:
+    image: matricula-service
+    build: ./versao_refatorada/matricula-service
+    ports: ["8083:8083"]

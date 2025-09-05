@@ -1,0 +1,12 @@
+
+%% UML REFACTORADO - PT
+classDiagram
+  class ApiGateway { +/alunos/** -> aluno-service +/cursos/** -> curso-service +/matriculas/** -> matricula-service }
+  class AlunoService { +POST /alunos +GET /alunos/{id} }
+  class CursoService { +POST /cursos +GET /cursos/{id} }
+  class MatriculaService { +POST /matriculas +GET /matriculas/{id} <<CircuitBreaker>> <<Bulkhead(ThreadPool)>> <<TimeLimiter>> - Feign->AlunoService - Feign->CursoService }
+  ApiGateway --> AlunoService
+  ApiGateway --> CursoService
+  ApiGateway --> MatriculaService
+  MatriculaService --> AlunoService : Feign
+  MatriculaService --> CursoService : Feign

@@ -1,0 +1,8 @@
+
+%% UML INICIAL - Versão com falhas
+classDiagram
+  class AlunoService { +POST /alunos +GET /alunos/{id} }
+  class CursoService { +POST /cursos +GET /cursos/{id} }
+  class MatriculaService { +POST /matriculas +GET /matriculas/{id} - RestTemplate->AlunoService - RestTemplate->CursoService }
+  MatriculaService --> AlunoService : chamada direta
+  MatriculaService --> CursoService : chamada direta
